@@ -76,6 +76,7 @@ const DestinationPage = () => {
           <ul className={styles.nav}>
             {ids.map((id) => (
               <li
+                key={byId[id].name}
                 className={id === activeDestination ? styles.active : {}}
                 onClick={setActiveDestination(byId[id].name)}
               >
