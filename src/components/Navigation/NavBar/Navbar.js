@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { showMobileMenu, destinationPick, crewPick, technologyPick } from '../../../store/actions';
+import { showMobileMenu, crewPick, technologyPick } from '../../../store/actions';
 
 import logo from '../../../assets/shared/logo.svg';
 import hamburger from '../../../assets/shared/icon-hamburger.svg';
@@ -19,10 +19,6 @@ const Navbar = () => {
     dispatch(showMobileMenu());
   };
 
-  //select destination
-  const selectDestination = (destination) => {
-    dispatch(destinationPick(destination));
-  }
   //select crew
   const selectCrew = (crew) => {
     dispatch(crewPick(crew));
@@ -46,9 +42,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className='nav-menu-item'>
-          <NavLink className='nav-menu-item-link' to='/destination'
-            onClick={() => selectDestination(data.destinations[0])}
-          >
+          <NavLink className='nav-menu-item-link' to='/destination'>
             <span>01</span>destination
           </NavLink>
         </li>

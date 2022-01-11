@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { hideMobileMenu, destinationPick, crewPick, technologyPick } from "../../../store/actions";
+import { hideMobileMenu, crewPick, technologyPick } from "../../../store/actions";
 
 import close from '../../../assets/shared/icon-close.svg';
 import data from '../../../helpers/data';
@@ -17,10 +17,6 @@ const MobileMenu = () => {
   //hide mobile menu
   const handleClick = () => {
     dispatch(hideMobileMenu())
-  }
-  //select destination
-  const selectDestination = (destination) => {
-    dispatch(destinationPick(destination));
   }
   //select crew
   const selectCrew = (crew) => {
@@ -42,9 +38,7 @@ const MobileMenu = () => {
             <Link className='mobile-menu-link' to='/' onClick={() => handleClick()}><span>00</span>Home</Link>
           </li>
           <li className='mobile-menu-item'>
-            <Link className='mobile-menu-link' to='/destination'
-              onClick={() => { handleClick(); selectDestination(data.destinations[0]) }}
-            ><span>01</span>destination</Link>
+            <Link className='mobile-menu-link' to='/destination'><span>01</span>destination</Link>
           </li>
           <li className='mobile-menu-item'>
             <Link className='mobile-menu-link' to='/crew'
