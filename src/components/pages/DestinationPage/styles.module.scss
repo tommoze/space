@@ -1,149 +1,169 @@
 @import "../../../helpers/variables";
 
+// :
+// .vienas {
+//@at-root
+/* 
+rekomenduojama scss rašyti iki 4 lygiu
+.vienas {
+  .du {
+    .trys {
+      .keturi {}
+    }
+  }
+}
+jeigu netyčia kode nutrinčiau klasę `.du` tai nebeveiktų klasės .trys ir .keturi
+jei noriu naudot klases .du, .trys ir .keturi, ju tėvas butinai turi buti klasė .vienas
+tai naudojant kuo mažesnį klasių gylį, tuo lankstesnis ir perpanaudojamesnis kodas
+https://thesassway.com/beginner-the-inception-rule/
+https://tailwindcss.com/
+*/
+
+.header {
+  padding-top: 212px;
+  padding-left: 166.5px;
+  text-transform: uppercase;
+  font-family: $font-middle;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 4.725px;
+  span {
+    font-weight: bold;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    padding-right: 28px;
+  }
+}
+
+.nav{
+  width: 285.5px;
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  li{
+    text-transform: uppercase;
+    font-family: $font-middle;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19.2px;
+    letter-spacing: 2.7px;
+    color: $color-letter-blue;
+    border-bottom:3px solid rgba(255, 255, 255, 0);
+    transition: border-bottom 0.6s ease-in;
+      &:hover{
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+          }
+  }
+  li.active {
+    border-bottom: 3px solid #ffffff;
+    &:hover {
+      border-bottom: 3px solid #ffffff;
+    }
+  }
+}
+
+.describtion {
+  margin-top: 37px;
+  h2{
+    text-transform: uppercase;
+    font-family: $font-big;
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 115px;
+  }
+  .text{
+    padding-left: 97px;
+    padding-top: 50px;
+    font-family: $font-small;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 32px;
+    color: $color-letter-blue;
+    text-align: justify;
+    width: 100%;
+    max-width: 444px;
+  }
+  hr{
+    height: 1px;
+    color: #383B4B;
+    margin-top: 18px;
+    opacity: 0.2;
+  }
+}
+
+.container{
+  display: flex;
+  padding-bottom: 20px;
+
+  .info{
+    width: 53.125%;
+    margin-top: 64px;
+    padding-left: 157px;
+    padding-right: 163px;
+  }
+}
+
+.parameters_grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:79px;
+  h5 {
+    margin-top: 28px;
+    text-transform: uppercase;
+    font-family: $font-middle;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2.3625px;
+    color: $color-letter-blue;
+  }
+  .parameters{
+    text-transform: uppercase;
+    font-family: $font-big;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 32px;
+    color: #ffffff;
+    margin-top: 12px;
+  }
+}
+
+.image{
+  width: 46.875%;
+  padding-left: 230px;
+  img{
+    margin-top: 97px;
+    width: 445px;
+    height:445px;
+  }
+
+  .fade-enter{
+    opacity: 0;   
+  }
+  .fade-exit{
+    opacity: 1;
+  }
+  .fade-enter-active{
+    opacity: 1; 
+  }
+  .fade-exit-active{
+    opacity: 0;
+  }
+  .fade-enter-active,
+  .fade-exit-active{
+    transition: opacity 2500ms;
+  }
+}
+
 .background {
   background: url(../../../assets/destination/background-destination-desktop.jpg)  center center/ cover no-repeat;
   min-height:100vh;
   width: 100vw;
   color:#ffffff;
-
-  .header {
-    padding-top: 212px;
-    padding-left: 166.5px;
-    text-transform: uppercase;
-    font-family: $font-middle;
-    font-weight: normal;
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: 4.725px;
-    span {
-      font-weight: bold;
-      mix-blend-mode: normal;
-      opacity: 0.25;
-      padding-right: 28px;
-    }
-  }
-
-  .container{
-    display: flex;
-    padding-bottom: 20px;
-
-    .image{
-      width: 46.875%;
-      padding-left: 230px;
-      img{
-        margin-top: 97px;
-        width: 445px;
-        height:445px;
-      }
-    
-      .fade-enter{
-        opacity: 0;   
-      }
-      .fade-exit{
-        opacity: 1;
-      }
-      .fade-enter-active{
-        opacity: 1; 
-      }
-      .fade-exit-active{
-        opacity: 0;
-      }
-      .fade-enter-active,
-      .fade-exit-active{
-        transition: opacity 2500ms;
-      }
-    }
-
-    .info{
-      width: 53.125%;
-      margin-top: 64px;
-      padding-left: 157px;
-      padding-right: 163px;
-
-      .nav{
-        width: 285.5px;
-        height: 34px;
-        display: flex;
-        justify-content: space-between;
-        li{
-          text-transform: uppercase;
-          font-family: $font-middle;
-          font-weight: normal;
-          font-style: normal;
-          font-size: 16px;
-          line-height: 19.2px;
-          letter-spacing: 2.7px;
-          color: $color-letter-blue;
-          border-bottom:3px solid rgba(255, 255, 255, 0);
-          transition: border-bottom 0.6s ease-in;
-            &:hover{
-              border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-              cursor: pointer;
-                }
-        }
-        li.active {
-          border-bottom: 3px solid #ffffff;
-          &:hover {
-            border-bottom: 3px solid #ffffff;
-          }
-        }
-      }
-
-      .describtion {
-        margin-top: 37px;
-        h2{
-          text-transform: uppercase;
-          font-family: $font-big;
-          font-weight: normal;
-          font-size: 100px;
-          line-height: 115px;
-        }
-        .text{
-          padding-left: 97px;
-          padding-top: 50px;
-          font-family: $font-small;
-          font-weight: normal;
-          font-style: normal;
-          font-size: 18px;
-          line-height: 32px;
-          color: $color-letter-blue;
-          text-align: justify;
-          width: 100%;
-          max-width: 444px;
-        }
-        hr{
-          height: 1px;
-          color: #383B4B;
-          margin-top: 18px;
-          opacity: 0.2;
-        }
-        .parameters_grid{
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-gap:79px;
-          h5 {
-            margin-top: 28px;
-            text-transform: uppercase;
-            font-family: $font-middle;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 17px;
-            letter-spacing: 2.3625px;
-            color: $color-letter-blue;
-          }
-          .parameters{
-            text-transform: uppercase;
-            font-family: $font-big;
-            font-weight: normal;
-            font-size: 28px;
-            line-height: 32px;
-            color: #ffffff;
-            margin-top: 12px;
-          }
-        }
-      }
-    }
-  }
 }
 
 //dekstop small
