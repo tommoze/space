@@ -1,0 +1,209 @@
+@import "../../../helpers/variables";
+
+.background{
+  background: url(../../../assets/home/background-home-desktop.jpg)  center center/ cover no-repeat;
+  min-height: 100vh;
+  display:flex;
+
+  .header {
+    width: 450px;
+    margin-left: 165px;
+    h3{
+      padding-top: 387px;
+      text-transform: uppercase;
+      font-family: $font-middle;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 400;
+      color: $color-letter-blue;
+      letter-spacing: 4.725px;
+      line-height: 34px;
+    }
+    h1{
+      text-transform: uppercase;
+      font-family: $font-big;
+      color: #ffffff;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 150px;
+      line-height: 172px;
+      margin:24px 0;
+    }
+    p{
+      font-family: $font-small;
+      font-style: normal;
+      font-weight: 400;
+      color: $color-letter-blue;
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+
+  .explore_container{
+    align-self: baseline;
+    width: 100%;
+    margin-left: 181px;
+  
+    a{
+      position: relative;
+      top:495px;
+      display: block;
+      width: 274px;
+      margin:0 auto;
+      .explore {
+        position: relative;
+        color:black;
+        background-color: #ffffff;
+        width: 274px; 
+        height: 274px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font-big;
+        font-size: 32px;
+        line-height: 36.67px;
+        padding-top: 119px;
+        border-radius: 50%;
+        margin: 0 auto;
+        z-index: 1;
+      }
+      &:hover{
+        cursor: pointer;
+        ~.explore_hover{
+         opacity: 0.1;
+        }
+      }
+    } 
+    .explore_hover{
+      position: relative;
+      width: 450px;
+      height: 450px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      margin: 0 auto;
+      top:133px;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+  }
+}
+
+// dekstop small
+@media only screen and  (max-width: 1250px) {
+  .background{
+    .header{
+      margin-left: 100px;
+    }
+    .explore_container{
+      margin-left:0;
+    }
+  }  
+}
+
+ //tablet
+ @media only screen and  (max-width: 1024px) {
+  .background {
+    background: url(../../../assets/home/background-home-tablet.jpg) no-repeat center center/ cover; 
+    flex-direction: column;
+
+    .header {
+      max-width: 450px;
+      margin: 0 auto;
+      h3{
+        padding-top:202px;
+        font-size: 20px;
+        letter-spacing: 3.375px;
+        line-height: 24px;
+        text-align: center;
+      }
+      h1{
+        line-height: 150px;
+        margin:24px 0;
+      }
+      p{
+      font-size: 16px;
+      line-height: 28px;
+      text-align: center;
+      }
+    }
+
+    .explore_container{
+      padding-left:0;
+      margin-top:79px;
+      max-height: 396px;
+      a{
+        top:77px;
+        .explore{
+          width: 242px; 
+          height: 242px;
+          font-size: 32px;
+          line-height: 36.67px;
+          padding-top: 103px;
+          top:0px;
+        }
+      }
+      .explore_hover{
+        width: 396px;
+        height: 396px;
+        top:-235px;
+        animation: pulse 2s infinite;
+      }
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.1;
+    }
+  }
+}
+ 
+ 
+ //mobile
+ @media only screen and (max-width:481px) {
+  .background {
+    background: url(../../../assets/home/background-home-mobile.jpg) no-repeat center center/ cover;
+    .header {
+      max-width: 327px;
+      width: 100%;   
+      h3{
+        padding-top:112px;
+        font-size: 16px;
+        letter-spacing: 2.7px;
+        line-height: 19px;
+      }
+      h1{
+        line-height: 100px;
+        margin:16px 0;
+        font-size: 80px;
+        text-align: center; 
+      }
+      p{
+        font-size: 15px;
+        line-height: 25px;
+      }
+    }
+
+    .explore_container{
+      max-height: 200px;
+      a{
+        top:0;
+      .explore{
+          width: 150px; 
+          height: 150px;
+          font-size: 20px;
+          line-height:23px;
+          padding-top: 68px;
+          top:0px;
+      }
+    }
+      .explore_hover{
+        width: 200px;
+        height: 200px;
+        top:-175px;
+      }
+    }
+  }
+}

@@ -1,0 +1,279 @@
+@import "../../../helpers/variables";
+
+.bacground{
+  background: url(../../../assets/technology/background-technology-desktop.jpg)  center center/ cover no-repeat;
+  min-height:100vh;
+  width: 100vw;
+  color:#ffffff;
+  
+  .header {
+    padding-top: 212px;
+    padding-left: 166.5px;
+    text-transform: uppercase;
+    font-family: $font-middle;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 4.725px;
+    span {
+      font-weight: bold;
+      mix-blend-mode: normal;
+      opacity: 0.25;
+      padding-right: 24px;
+    }
+  }
+
+  .container{
+    display: flex;
+
+    .nav_container {
+       margin-top: 105px;
+     
+      .technology_li{
+        border: solid 1px rgba(255,255,255, 0.25);
+        border-radius: 50%;
+        width: 80px;
+        margin: 32px 80px 32px 165px;
+        font-family: $font-big;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 37px;
+        text-align: center;
+        letter-spacing: 2px;
+        padding: 22px 0;
+        color: #ffffff;
+        background-color:rgba(255,255,255, 0) ;
+        transition: border 0.6s ease-in;
+        transition: background-color 0.6s ease-in;
+        &:hover{
+          border: solid 1px #ffffff;
+          cursor: pointer;
+        }
+      }
+      .li_active{
+        color:#000000;
+        background-color: rgba(255,255,255, 1);
+      }
+    }
+
+    .describtion{
+      margin-top: 137px;
+    
+      h2{
+        font-family: $font-middle;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 2.7px;
+        color: $color-letter-blue;
+        text-transform: uppercase;
+      }
+      .technology_name{
+        font-family: $font-big;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 56px;
+        line-height: 64px;
+        margin-top: 11px;  
+        text-transform: uppercase;
+      }
+      .text{
+        font-family: $font-small;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 32px;
+        color: $color-letter-blue;
+        margin-right: 156px;
+      }
+  
+    }
+    .img_portrait{
+      justify-self: right;
+      width: 100%;
+      height: 100%;
+      max-width: 515px;
+      max-height: 527px;
+      object-fit: contain;
+    }
+    .fade-enter{
+      opacity: 0;
+    }
+    .fade-exit{
+      opacity: 1;
+    }
+    .fade-enter-active{
+      opacity: 1;     
+    }
+    .fade-exit-active{
+      opacity: 0;
+    }
+    .fade-enter-active,
+    .fade-exit-active{
+      transition: opacity 2500ms;
+    }
+  } 
+}
+
+
+//dekstop small
+@media only screen and  (max-width: 1300px) {
+  .bacground {
+    .container{
+      .nav_container {
+        .technology_li {
+          margin: 32px 30px 32px 100px;
+        }
+      }
+      .describtion{
+        .text{
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+ }
+
+  //tablet big
+ @media only screen and (max-width: 1024px) {
+  .bacground{
+    background: url(../../../assets/technology/background-technology-tablet.jpg)  center center/ cover no-repeat;
+
+    .header{
+      padding-top: 136px;
+      padding-left: 38.5px;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 3.375px;
+      margin-bottom: 60px;
+      span {
+        padding-right: 16px;
+      }
+    }
+
+    .container{
+      flex-direction: column;
+
+      .img_landscape{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .nav_container {
+        margin: 56px auto 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .technology_li{
+            width: 60px;
+            margin: 0px 16px 0 0 ;
+            font-size: 24px;
+            line-height: 27.5px;
+            letter-spacing: 1.5px;
+            padding: 16px 0;  
+        }
+      }
+      .describtion{
+        margin: 44px 155px 0 155px;
+
+        h2{
+          text-align:center;
+        }
+        .technology_name{
+          margin: 16px 0;
+          text-align: center;
+        }
+        .text{
+          text-align: center;
+          margin: 0;
+        }
+      }
+    }
+  }
+ }
+
+ //tablet small
+ @media only screen and (max-width: 768px) {
+  .bacground{   
+    .container{ 
+      .describtion{      
+        width: 458px;
+        margin:44px auto 0 auto;
+        h2{
+          text-align:center;
+        }     
+        .technology_name{
+          margin: 16px 0;
+          font-size: 40px;
+          line-height: 46px;
+          text-align: center;
+        }
+        .text{
+          text-align: center;
+          margin: 44px auto 0 auto;
+          margin: 0;
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+
+ //mobile
+ @media only screen and (max-width:481px) {
+  .bacground{
+    .header{
+      padding-top: 88px;
+      padding-left: 0px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.7px;
+      margin-bottom: 32px;
+    }
+
+    .container{
+     
+      .nav_container {
+        margin: 34px auto 0 auto;
+        .technology_li{
+            width: 40px;
+            font-size: 16px;
+            line-height: 18.34px;
+            letter-spacing: 1px;
+            padding: 11px 0;  
+        }
+      }
+      .describtion{
+        width: 100%;
+        max-width: 337px;
+        margin:26px auto 0 auto;
+        padding: 0 10px;
+        h2{
+          font-size: 14px;
+          line-height: 17px;
+          letter-spacing: 2.3625px;
+        }
+        .technology_name{
+          font-size: 24px;
+          line-height: 28px;
+          margin-top: 9px;
+        }
+        .text{
+          font-size: 15px;
+          line-height: 25px;
+          margin: 0;
+        }
+      }
+    }
+  }
+ }

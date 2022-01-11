@@ -1,0 +1,330 @@
+@import "../../../helpers/variables";
+
+.background{
+  background: url(../../../assets/crew/background-crew-desktop.jpg)  center center/ cover no-repeat;
+  height:100vh;
+  width: 100vw;
+  color:#ffffff;
+  
+  .container{
+    padding-top: 212px;
+    display: flex;
+    height: 100%;
+
+    .info {
+      width: 55.56%;
+      padding-left: 165px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      .describtion{
+        .header {
+          text-transform: uppercase;
+          font-family: $font-middle;
+          font-weight: normal;
+          font-size: 28px;
+          line-height: 34px;
+          letter-spacing: 4.725px;
+          span {
+            font-weight: bold;
+            mix-blend-mode: normal;
+            opacity: 0.25;
+            padding-right: 24px;
+          }
+        }
+        .role{
+          margin-top: 154px;
+          margin-bottom: 15px;
+          font-family: $font-big;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 32px;
+          line-height: 37px;
+          text-transform: uppercase;
+          mix-blend-mode: normal;
+          opacity: 0.5;
+    
+        }
+        .name{
+          margin-bottom: 27px;
+          font-family: $font-big;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 56px;
+          line-height: 64px;
+          text-transform: uppercase;
+        }
+        .text{
+          width: 444px;
+          font-family: $font-small;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 32px;
+          color: #D0D6F9;
+        }
+      }
+
+      .nav{
+        padding-bottom: 94px;
+        padding-top:20px;
+        justify-self: flex-end;
+        display: flex;
+        justify-content: space-between;
+        width: 132px;
+  
+        li{
+          width: 15px;
+          height: 15px;
+          background-color: #ffffff;
+          border-radius: 50%;
+          mix-blend-mode: normal;
+          opacity: 0.17;
+          transition: opacity 0.6s ease-in;
+          &:hover{
+            opacity: 0.5;
+            cursor: pointer;
+          }
+        }
+        .active{     
+          opacity: 1;
+          &:hover{
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .image{
+      display: flex;
+      align-items: flex-end;
+      width: 44.444%;
+      img{
+        max-width: 100%; 
+        max-height: 100%;
+       }
+
+      .fade-enter{
+        opacity: 0;
+       }
+       .fade-exit{
+        opacity: 1;
+      }
+       .fade-enter-active{
+        opacity: 1;    
+      }
+       .fade-exit-active{
+        opacity: 0;
+      }
+      .fade-enter-active,
+      .fade-exit-active{
+         transition: opacity 2500ms;
+      }
+    }
+  }
+}
+
+//dekstop small
+@media only screen and  (max-width: 1100px){
+  .background{
+    .container{
+      .info{
+        padding-left: 100px;
+      }
+    }
+  } 
+}
+
+//tablet big
+@media only screen and  (max-width: 1024px) {
+  .background {
+    background: url(../../../assets/crew/background-crew-tablet.jpg) no-repeat center center/ cover;
+    height: auto;
+    min-height: 100vh;
+    .container{
+      padding-top:0;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+  
+      .info {
+        width: 100%;
+        padding-left: 0px;
+        height:492px;
+        display: block;
+  
+        .describtion{         
+          text-align: center;
+          .header {
+            padding-top: 136px;
+            padding-left: 38.5px;
+            text-align: start;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 3.38px;
+            span {
+              padding-right: 16px;
+            }
+          }
+          .role{
+            margin-top: 60px;
+            margin-bottom: 8px;
+            font-size: 24px;
+            line-height: 28px;
+          }
+          .name{
+            margin-bottom: 16px;
+            font-size:40px;
+            line-height: 46px;
+          }
+          .text{
+            height: 84px;
+            margin:0 auto;
+            font-size: 16px;
+            line-height: 28px;
+            text-align: center;
+          }
+          .width_douglas{
+            width: 100%;
+            max-width: 458px;
+          }
+          .width_mark{
+            width: 520px;
+          }
+          .width_victor{
+            width: 592px;
+          }
+          .width_anousheh{
+            width: 536px;
+          }
+        }
+  
+        .nav{
+         padding-bottom: 40px;
+         padding-top:40px;
+          width: 88px;
+          margin: 0 auto;
+  
+          li{
+            width: 10px;
+            height: 10px;   
+          }
+        }
+      }
+
+      .image{
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        img{      
+          height: 532px;
+        }
+      }
+    }
+  }
+}
+
+ //mobile
+ @media only screen and (max-width:481px) {
+  .background {
+    background: url(../../../assets/crew/background-crew-mobile.jpg) no-repeat center center/ cover;
+    height: auto;
+    min-height: 100vh;
+    .container{
+      padding-top: 139px;
+      flex-direction: column-reverse;
+      height: 100%;
+    
+      .info {
+        width: 100%;
+        padding-left: 0px;
+        height:100%;
+        display: flex;
+        flex-direction: column-reverse;
+  
+        .describtion{
+          .header {
+            position: relative;
+            top:-347px;
+            width: 100%;
+            text-align:center;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 2.7px;
+            padding-top:0;
+          }
+          .role{
+            margin-top: 0px;
+            font-size: 16px;
+            line-height: 18px;
+          }
+          .name{
+            font-size:24px;
+            line-height: 28px;
+          }
+          .text{
+            height: auto;
+            margin:0 24px;
+            font-size: 15px;
+            line-height: 25px;
+          }
+          .width_douglas{
+            width: auto;
+          }
+          .width_mark{
+            width: auto;
+          }
+          .width_victor{
+            width: auto;
+          }
+          .width_anousheh{
+            width: auto;
+          }
+        }
+  
+        .nav{
+         padding-bottom: 24px;
+         padding-top:32px;
+            
+          li{
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+
+      .image{
+        padding-top:0px;
+        margin:0 auto;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        max-width: 327px;
+        height: 223px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);     
+        
+        img{ 
+          margin-top:51px;
+          .fade-enter{
+            opacity: 0;
+          }
+          .fade-exit{
+            opacity: 1;
+          }
+         .fade-enter-active{
+           opacity: 1; 
+          }
+          .fade-exit-active{
+            opacity: 0;
+          }
+          .fade-enter-active,
+          .fade-exit-active{
+            transition: opacity 2005ms;
+          }
+        }
+      }
+    }
+  }
+ }

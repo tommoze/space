@@ -1,0 +1,63 @@
+@import "../../../helpers/variables";
+
+#show-mobile-menu{
+  transform: translateX(0);
+  transition: .5s;
+}
+
+#hide-mobile-menu{
+  transform: translateX(150vw);
+  transition: .5s;
+}
+
+.mobile{
+  display: flex;
+  justify-content: flex-end;
+  .mobile-container{
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+    color: white;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    width: 70%;
+    height: 100vh;
+  
+    .cancel-mobile-menu{
+      margin-top: 34px;
+      padding-bottom: 32px;
+      margin-right: 27px;
+      text-align: right;
+      .cancel-sign {
+        width: 19px;
+        height: 19px;
+        cursor: pointer; 
+      }
+    }
+    
+    .mobile-menu-items{
+      margin-left: 32px;
+      .mobile-menu-item{
+        padding-top: 32px;
+        &:hover {
+        border-right:solid 4px #ffffff;
+        }
+        .mobile-menu-link{
+          font-family: $font-middle;
+          text-transform: uppercase;
+          font-size: 16px;
+          line-height: 19px;
+          letter-spacing: 2.7px;
+          padding-bottom: 38px;
+          .active {
+            border-bottom:solid 3px #ffffff;
+          } 
+          span {
+            font-weight: bold;
+            padding-right: 11px;
+          }
+        }
+      }
+    }
+  }
+}

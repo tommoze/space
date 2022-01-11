@@ -1,0 +1,149 @@
+@import "../../../helpers/variables";
+
+.navbar-container {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 96px;
+  overflow: hidden;
+  padding-left: 55px;
+ 
+  .logo-image{
+    margin-top:24px;
+    width: 48px;
+    height: 48px;
+    flex-grow: 0;
+  }
+
+  hr{
+    position: absolute;
+    width: 32.85%;
+    height: 1px;
+    left:167px;
+    top: 48px;
+    background: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    z-index: 1;
+    flex-grow: 0;
+  }
+ 
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 59.93%;
+    padding: 0 165px 0 123px;
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+    flex-grow: 0;
+
+    .nav-menu-item {
+      .nav-menu-item-link{
+        font-family: $font-middle;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 2.7px;
+        padding-bottom: 35px;
+        border-bottom: 3px solid rgba(255, 255, 255, 0);
+        transition: border-bottom 0.5s ease-in;
+       
+        span {
+          font-weight: bold;
+          margin-right: 11px;
+        }
+        &:hover {
+          border-bottom: 3px solid rgba(255, 255, 255, 0.5);         
+        }
+      }
+      .active {
+          border-bottom:3px solid  #ffffff;
+          padding-bottom: 35px;
+      } 
+    }
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+//dekstop small
+@media only screen and  (max-width: 1300px) {
+ .navbar-container {
+    hr {
+     width: 30%;
+    }
+   .nav-menu {
+      padding: 0 50px;
+    }
+  }
+}
+
+
+//tablet
+@media only screen and (max-width: 1024px) {
+
+  .navbar-container {
+    top:0;
+    padding-left: 39px;
+    hr{
+     width: 0%;
+      display: none;
+    }
+    .nav-menu{
+      width: 61.73%;
+      padding: 0 46px 0 48px;
+      .nav-menu-item{
+        .nav-menu-item-link{
+          font-size: 14px;
+          line-height: 17px;
+          letter-spacing: 2.3625px;
+          span{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//small tablet
+@media only screen and (max-width: 650px) {
+  .navbar-container {
+    .nav-menu{
+      width: 70%;
+      padding: 0 20px 0 20px;
+    }
+  }
+}
+
+//mobile
+@media only screen and (max-width:481px) {
+ 
+  .navbar-container {
+    padding-left: 24px;
+    .logo-image{
+      width: 40px;
+      height: 40px;
+    }
+    .nav-menu {
+      display: none;
+    }   
+    .hamburger{
+      display: block;
+      width: 24px;
+      height: 21px;
+      margin-top: 33px;
+      margin-right: 24px;
+    }
+  } 
+}
+
+
