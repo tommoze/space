@@ -45,8 +45,6 @@ const DestinationPage = () => {
     [dispatch]
   );
 
-  console.log(byId);
-
   return (
     <section className={styles.background} role="contentinfo">
       <h3 className={styles.header}>

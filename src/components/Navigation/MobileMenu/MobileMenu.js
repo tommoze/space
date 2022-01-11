@@ -38,7 +38,7 @@ const MobileMenu = () => {
             <Link className='mobile-menu-link' to='/' onClick={() => handleClick()}><span>00</span>Home</Link>
           </li>
           <li className='mobile-menu-item'>
-            <Link className='mobile-menu-link' to='/destination'><span>01</span>destination</Link>
+            <Link className='mobile-menu-link' to='/destination' onClick={handleClick}><span>01</span>destination</Link>
           </li>
           <li className='mobile-menu-item'>
             <Link className='mobile-menu-link' to='/crew'
