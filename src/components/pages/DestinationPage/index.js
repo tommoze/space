@@ -2,8 +2,6 @@ import React, { useCallback, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { destinationPick } from "../../../store/actions";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-
-import data from "../../../helpers/data";
 import imageMoon from "../../../assets/destination/image-moon.webp";
 import imageMars from "../../../assets/destination/image-mars.webp";
 import imageEuropa from "../../../assets/destination/image-europa.webp";
@@ -19,22 +17,8 @@ const images = {
 };
 
 const DestinationPage = () => {
-  const { ids, byId } = useMemo(
-    () =>
-      data.destinations.reduce(
-        (acc, cur) => ({
-          ids: [...acc.ids, cur.name],
-          byId: {
-            ...acc.byId,
-            [cur.name]: cur,
-          },
-        }),
-        { ids: [], byId: {} }
-      ),
-    []
-  );
-  const activeDestination =
-    useSelector((state) => state.destinationReducer.destination) || ids[0];
+  const { activeDestination, ids, byId } =
+    useSelector((state) => state.destinationReducer)
   const dispatch = useDispatch();
 
   //select destination
