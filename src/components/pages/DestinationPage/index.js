@@ -1,30 +1,17 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { destinationPick } from "../../../store/actions";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import imageMoon from "../../../assets/destination/image-moon.webp";
-import imageMars from "../../../assets/destination/image-mars.webp";
-import imageEuropa from "../../../assets/destination/image-europa.webp";
-import imageTitan from "../../../assets/destination/image-titan.webp";
+import { setActive } from "../../../store/reducers/destinations"
 
 import styles from "./styles.module.scss";
 
-const images = {
-  Mars: imageMars,
-  Europa: imageEuropa,
-  Moon: imageMoon,
-  Titan: imageTitan,
-};
-
 const DestinationPage = () => {
-  const { activeDestination, ids, byId } =
-    useSelector((state) => state.destinationReducer)
+  const { active, ids, entities } =
+    useSelector((state) => state.destinations)
   const dispatch = useDispatch();
-
-  //select destination
-  const setActiveDestination = useCallback(
-    (destination) => () => {
-      dispatch(destinationPick(destination));
+  const onClick = useCallback(
+    (id) => () => {
+      dispatch(setActive(id));
     },
     [dispatch]
   );
@@ -38,7 +25,7 @@ const DestinationPage = () => {
         <div className={styles.image}>
           <SwitchTransition mode="out-in">
             <CSSTransition
-              key={activeDestination}
+              key={active}
               timeout={{ enter: 2000, exit: 500 }}
               classNames={{
                 enter: styles["fade-enter"],
@@ -48,8 +35,9 @@ const DestinationPage = () => {
               }}
             >
               <img
-                src={images[activeDestination]}
-                alt={byId[activeDestination].name}
+                // copy src/assets to public/ before uncommenting
+                // src={entities[active].images.png}
+                alt={entities[active].name}
               />
             </CSSTransition>
           </SwitchTransition>
@@ -58,17 +46,17 @@ const DestinationPage = () => {
           <ul className={styles.nav}>
             {ids.map((id) => (
               <li
-                key={byId[id].name}
-                className={id === activeDestination ? styles.active : {}}
-                onClick={setActiveDestination(byId[id].name)}
+                key={entities[id].name}
+                className={id === active ? styles.active : ""}
+                onClick={onClick(entities[id].name)}
               >
-                {byId[id].name}
+                {entities[id].name}
               </li>
             ))}
           </ul>
           <SwitchTransition mode="out-in">
             <CSSTransition
-              key={activeDestination}
+              key={active}
               timeout={{ enter: 2000, exit: 500 }}
               classNames={{
                 enter: styles["fade-enter"],
@@ -78,22 +66,22 @@ const DestinationPage = () => {
               }}
             >
               <div className={styles.describtion}>
-                <h2>{byId[activeDestination].name}</h2>
+                <h2>{entities[active].name}</h2>
                 <p className={styles.text}>
-                  {byId[activeDestination].description}
+                  {entities[active].description}
                 </p>
                 <hr />
                 <div className={styles.parameters_grid}>
                   <div className={styles.distance}>
                     <h5>avg. distance</h5>
                     <p className={styles.parameters}>
-                      {byId[activeDestination].distance}
+                      {entities[active].distance}
                     </p>
                   </div>
                   <div className={styles.travel_time}>
                     <h5>est. travel time</h5>
                     <p className={styles.parameters}>
-                      {byId[activeDestination].travel}
+                      {entities[active].travel}
                     </p>
                   </div>
                 </div>
