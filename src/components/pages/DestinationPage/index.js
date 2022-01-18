@@ -1,13 +1,44 @@
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import { setActive } from "../../../store/reducers/destinations"
+import {
+  setActive,
+  selectIds,
+  selectEntities,
+  selectActive,
+  selectById,
+} from "../../../store/reducers/destinations";
 
 import styles from "./styles.module.scss";
 
+const Destination = ({ id }) => {
+  const { name, description, distance, travel } = useSelector((state) =>
+    selectById(state, id)
+  );
+
+  return (
+    <div className={styles.describtion}>
+      <h2>{name}</h2>
+      <p className={styles.text}>{description}</p>
+      <hr />
+      <div className={styles.parameters_grid}>
+        <div className={styles.distance}>
+          <h5>avg. distance</h5>
+          <p className={styles.parameters}>{distance}</p>
+        </div>
+        <div className={styles.travel_time}>
+          <h5>est. travel time</h5>
+          <p className={styles.parameters}>{travel}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const DestinationPage = () => {
-  const { active, ids, entities } =
-    useSelector((state) => state.destinations)
+  const ids = useSelector(selectIds);
+  const entities = useSelector(selectEntities);
+  const active = useSelector(selectActive);
   const dispatch = useDispatch();
   const onClick = useCallback(
     (id) => () => {
@@ -65,27 +96,7 @@ const DestinationPage = () => {
                 exitActive: styles["fade-enterexit-active"],
               }}
             >
-              <div className={styles.describtion}>
-                <h2>{entities[active].name}</h2>
-                <p className={styles.text}>
-                  {entities[active].description}
-                </p>
-                <hr />
-                <div className={styles.parameters_grid}>
-                  <div className={styles.distance}>
-                    <h5>avg. distance</h5>
-                    <p className={styles.parameters}>
-                      {entities[active].distance}
-                    </p>
-                  </div>
-                  <div className={styles.travel_time}>
-                    <h5>est. travel time</h5>
-                    <p className={styles.parameters}>
-                      {entities[active].travel}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <Destination id={active} />
             </CSSTransition>
           </SwitchTransition>
         </div>

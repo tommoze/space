@@ -23,4 +23,9 @@ export const destinationsSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { setActive } = destinationsSlice.actions;
 
+const select = (state) => state.destinations;
+export const selectActive = (state) => select(state).active;
+export const { selectIds, selectEntities, selectById } =
+  adapter.getSelectors(select);
+
 export default destinationsSlice.reducer;
